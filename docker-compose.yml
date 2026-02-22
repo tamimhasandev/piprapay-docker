@@ -3,4 +3,19 @@ services:
     image: tamimhasandev/piprapay:latest
     volumes:
       - ./piprapay:/var/www/html/
+    ports:
+      - "8000:80"
     restart: unless-stopped
+  db:
+    image: mariadb:11
+    environment:
+      MARIADB_ROOT_PASSWORD: rootpassword
+      MARIADB_DATABASE: piprapay
+      MARIADB_USER: piprapayuser
+      MARIADB_PASSWORD: piprapaypassword
+    volumes:
+      - db_data:/var/lib/mysql
+    restart: unless-stopped
+
+volumes:
+  db_data:
