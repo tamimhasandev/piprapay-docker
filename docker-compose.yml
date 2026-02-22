@@ -2,5 +2,5 @@ services:
   piprapay:
     image: tamimhasandev/piprapay:latest
     volumes:
-      - /piprapay:/var/www/html/
+      - ../files/piprapay:/var/www/html/
     restart: unless-stopped
