@@ -3,8 +3,6 @@ services:
     image: tamimhasandev/piprapay:latest
     volumes:
       - ./piprapay:/var/www/html/
-    ports:
-      - "8000:80"
     restart: unless-stopped
   db:
     image: mariadb:11
