@@ -12,7 +12,7 @@ RUN apt-get update && apt-get install -y \
 RUN a2enmod rewrite
 
 # Copy project files
-COPY PipraPay/ /var/www/html/
+COPY --chown=www-data:www-data piprapay/ /var/www/html/
 
 WORKDIR /var/www/html
 
